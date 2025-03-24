@@ -1,12 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.xylopia.sionacs.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "package": "dev.xylopia.sionacs.mixins",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "sionacs.refmap.json",
   "mixins": [
+    "TermMethodsMixin"
   ],
   "client": [
+    "FixedWidthFontRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
