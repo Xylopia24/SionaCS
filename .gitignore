@@ -1,4 +1,5 @@
 # Project folders to exclude
+.gradle/
 .idea/
 .instructions/
 .vscode/
