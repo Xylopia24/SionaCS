@@ -181,8 +181,8 @@ dependencies {
     runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}"))
 
     // Tardim Dependencies
-    compileOnly(files("./libs/tardim-${tardim_version}-dev.jar"))
-    implementation(fg.deobf("curse.maven:tardim-531315:4678251"))
+    //compileOnly(files("./libs/tardim-${tardim_version}-dev.jar"))
+    //implementation(fg.deobf("curse.maven:tardim-531315:4678251"))
 
     // Other dependencies
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
