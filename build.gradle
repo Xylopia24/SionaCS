@@ -158,6 +158,27 @@ repositories {
         url = "https://maven.theillusivec4.top/"
     }
 
+    // Tetra Repo
+    maven {
+        name = "Tetra"
+        url = "https://maven.blamejared.com/"
+    }
+
+    // Modrinth Repo
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven/"
+            }
+        }
+        forRepositories(fg.repository)
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+    
+
     // CurseMaven Repo
     maven {
         name = "CurseForge"
@@ -181,8 +202,12 @@ dependencies {
     runtimeOnly(fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}"))
 
     // Tardim Dependencies
-    //compileOnly(files("./libs/tardim-${tardim_version}-dev.jar"))
-    //implementation(fg.deobf("curse.maven:tardim-531315:4678251"))
+    compileOnly(files("./libs/tardim-${tardim_version}-dev.jar"))
+    implementation(fg.deobf("curse.maven:tardim-531315:4678251"))
+
+    // Tetra Dependencies
+    implementation fg.deobf("maven.modrinth:mutil:${mutil_version}")
+    implementation fg.deobf("maven.modrinth:tetra:${tetra_version}")
 
     // Other dependencies
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"

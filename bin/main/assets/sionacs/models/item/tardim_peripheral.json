@@ -1,0 +1,23 @@
+{
+    "parent": "sionacs:block/tardim_peripheral",
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [ 75, 45, 0 ],
+        "scale": [ 0.40, 0.40, 0.40 ],
+        "translation": [ 0, 1, 0 ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [ 75, 45, 0 ],
+        "scale": [ 0.40, 0.40, 0.40 ],
+        "translation": [ 0, 1, 0 ]
+      },
+      "firstperson_lefthand": {
+        "rotation": [ 0, 45, 0 ],
+        "scale": [ 0.40, 0.40, 0.40 ]
+      },
+      "firstperson_righthand": {
+        "rotation": [ 0, 45, 0 ],
+        "scale": [ 0.40, 0.40, 0.40 ]
+      }
+    }
+  }

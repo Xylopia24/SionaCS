@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DID",
+    "CKC",
+    "RCR"
+  ],
+  "key": {
+    "D": {
+        "item": "minecraft:diamond"
+    },
+    "I": {
+        "item": "minecraft:iron_ingot"
+    },
+    "C": {
+        "item": "minecraft:copper_ingot"
+    },
+    "K": {
+        "item": "tardim:tardim_key"
+    },
+    "R": {
+        "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "sionacs:tardim_peripheral"
+  }
+}

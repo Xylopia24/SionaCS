@@ -1,0 +1,7 @@
+{
+  "block.sionacs.tardim_peripheral": "TARDIM Control Interface",
+  "item.sionacs.tardim_peripheral": "TARDIM Control Interface",
+  
+  "sionacs.peripherals.tardim.error.invalid_tardim": "Not placed in a valid TARDIM",
+  "sionacs.peripherals.tardim.error.no_destination": "No destination set"
+}

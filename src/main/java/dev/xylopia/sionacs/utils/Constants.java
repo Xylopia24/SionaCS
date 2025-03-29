@@ -1,10 +1,23 @@
 package dev.xylopia.sionacs.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * Constants used throughout the mod
+ */
 public class Constants {
+    // Mod information
     public static final String MOD_ID = "sionacs";
     public static final String MOD_NAME = "Siona: Chronosphere";
-    public static final String MOD_VERSION = "1.0.0";
-    public static final String MOD_DESCRIPTION = "A mod that adds a variety of features to the game.";
-    public static final String MOD_AUTHOR = "Xylopia";
-    public static final String MOD_URL = "";
+    
+    // Logger instance
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
+    
+    // Version information
+    public static final String VERSION = "0.1.0";
+    
+    // Integration constants
+    public static final String COMPUTERCRAFT_ID = "computercraft";
+    public static final String TARDIM_ID = "tardim";
 }
