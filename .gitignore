@@ -6,6 +6,7 @@
 build/
 run/
 run-data/
+libs/source/
 libs/TARDIMIC/
 
 # Allow Gradle wrapper jar (common exception)

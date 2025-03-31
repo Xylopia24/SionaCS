@@ -3,6 +3,7 @@ package dev.xylopia.sionacs.integration.computercraft;
 import dan200.computercraft.api.ForgeComputerCraftAPI;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import dan200.computercraft.api.peripheral.IPeripheralProvider;
+import dev.xylopia.sionacs.core.apis.CrtAPI;
 import dev.xylopia.sionacs.integration.tardim.peripheral.TardimPeripheralBlockEntity;
 import dev.xylopia.sionacs.utils.Constants;
 import net.minecraft.core.BlockPos;
@@ -11,7 +12,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +24,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Handles registration of ComputerCraft integration components
  */
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ComputerCraftRegistration {
     private static final Logger LOGGER = LoggerFactory.getLogger(Constants.MOD_ID + ":ComputerCraft");
 
@@ -29,6 +35,16 @@ public class ComputerCraftRegistration {
         // Register setup event to initialize peripheral providers
         eventBus.addListener(ComputerCraftRegistration::setup);
         LOGGER.info("Initialized ComputerCraft integration");
+    }
+    
+    /**
+     * Send InterModComms messages to ComputerCraft during the appropriate phase
+     */
+    @SubscribeEvent
+    public static void sendInterModComms(final InterModEnqueueEvent event) {
+        // Register our CRT API via InterModComms
+        LOGGER.info("Registering Siona CRT API");
+        InterModComms.sendTo("computercraft", "register-lua-api", () -> new CrtAPI());
     }
     
     /**
